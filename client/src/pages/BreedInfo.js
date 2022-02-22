@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import LoadingSpinner from "../components/Loading";
 import BreedData from "../components/BreedData";
+import MorePics from "../components/MorePics";
 
 const BreedInfo = () => {
   const [loading, setLoading] = useState(true);
@@ -32,7 +33,8 @@ const BreedInfo = () => {
     <>
       <Header />
       <BreedData breedInfo={info} />
-
+      <h3 style={{ padding: "0 2rem" }}>Gallery:</h3>
+      <MorePics breedId={info.id} />
     </>
   );
 };

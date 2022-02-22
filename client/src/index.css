@@ -204,7 +204,7 @@ img.menu-image {
   display: block;
 }
 
-/* = Dashboard ============================================================= 
+/* = Dashboard ================================================================
  * Thanks to:
  * https://github.com/ashleypean/cat-wiki
  */
@@ -323,6 +323,48 @@ div.breed-data div.info div.rating-container div.no-bg {
 
   div.rating {
     width: 60%;
+  }
+}
+
+/* = MorePics =================================================================
+ * Thanks to:
+ * https://github.com/ashleypean/cat-wiki
+ */
+
+div.other-photos {
+  display: flex;
+  height: auto;
+  padding: 0 2rem;
+}
+
+div.other-photos h3 {
+  font-weight: 500;
+}
+
+div.other-photos div.photos a {
+  height: auto;
+  align-items: space-between;
+  width: 100%;
+}
+
+div.other-photos div.photos a img {
+  background-color: rgb(65, 65, 65);
+  width: 44%;
+  height: 7rem;
+  object-fit: scale-down;
+  margin: 5% 2.5%;
+  border-radius: 12px;
+}
+
+@media screen and (min-width: 700px) {
+  div.other-photos div.photos {
+    height: auto;
+  }
+
+  div.other-photos div.photos a img {
+    width: 23%;
+    height: 9rem;
+    margin: 1.5% 1%;
   }
 }
 
