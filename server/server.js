@@ -1,6 +1,5 @@
 const path = require("path");
 const express = require("express");
-const cors = require("cors");
 const axios = require("axios");
 require("dotenv").config();
 const enforce = require("express-sslify");
@@ -24,11 +23,11 @@ app.get("/spinning", (req, res) => {
   res.json({ message: "😻 Welcome, from Kitty-Wiki 😸" });
 });
 
-app.get("/api", cors(), (req, res) => {
+app.get("/api", (req, res) => {
   const allData = res.json(kittyData);
 });
 
-app.get("/api/:name", cors(), (req, res) => {
+app.get("/api/:name", (req, res) => {
   // getting selected breed name this way as req.params returns "service-worker.js"
   const url = req.rawHeaders[13];
   const breed = url
@@ -42,7 +41,7 @@ app.get("/api/:name", cors(), (req, res) => {
 });
 
 // using Axios to call the cat API for maximum allowed images of the cat breed.
-app.get("/more-pics/:id", cors(), async (req, res) => {
+app.get("/more-pics/:id", async (req, res) => {
   console.log(req.params.id);
   try {
     const pics = await axios.get(
