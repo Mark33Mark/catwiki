@@ -55,7 +55,7 @@ app.get("/more-pics/:id", async (req, res) => {
 
 // if in production then serve client/build as static assets
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
+  app.use(express.static(path.join(__dirname, "build")));
 }
 
 // All other GET requests not handled before will return our React app
