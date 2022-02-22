@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import BreedSearch from "../components/BreedSearch";
-import LoadingSpinner from "../components/Loading";
+// import LoadingSpinner from "../components/Loading";
 
 const Landing = () => {
-  const [isLoading, setIsLoading] = useState([true]);
+  // const [isLoading, setIsLoading] = useState([true]);
   const [names, setNames] = useState([""]);
 
   // useEffect(() => {
@@ -27,14 +27,15 @@ const Landing = () => {
         const breeds = data.map((cats)=>cats.name);
         setNames(breeds);
       })
-      .then(setTimeout(() => setIsLoading(false), 2000));
+      // .then(setTimeout(() => setIsLoading(false), 2000));
     }, []);
 
   console.log(names);
 
-  return isLoading ? (
-    <LoadingSpinner />
-  ) : (
+  return (
+  // isLoading ? (
+  //   <LoadingSpinner />
+  // ) : (
     <>
       <div className="homepage" style={{ backgroundColor: "black" }}>
         <BreedSearch names={names} />

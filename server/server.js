@@ -29,18 +29,14 @@ app.get("/api", cors(), (req, res) => {
 });
 
 app.get("/:name", cors(), (req, res) => {
- console.log("Selected = " +req.headers.breed);
- const breed = req.headers.breed;
-  // getting selected breed name this way as req.params returns "service-worker.js"
-  // const url = req.rawHeaders[13];
-  // const breed = url
-  //   .slice(url.lastIndexOf("/") + 1, url.length)
-  //   .replace(/%20/g, " ");
+  console.log("Selected = " + req.headers.breed);
+  const breed = req.headers.breed;
 
   console.log(breed);
 
-  // // find the data array for a specific breed
-  const breedData = kittyData[kittyData.findIndex((item) => item.name === breed)];
+  // find the data array for a specific breed
+  const breedData =
+    kittyData[kittyData.findIndex((item) => item.name === breed)];
   res.json(breedData);
 });
 
@@ -50,7 +46,7 @@ app.get("/more-pics/:id", async (req, res) => {
     const pics = await axios.get(
       `https://api.thecatapi.com/v1/images/search?order=ASC&limit=25&breed_id=${req.params.id}`
     );
-    
+
     res.json(pics.data);
   } catch (err) {
     console.log(err);
