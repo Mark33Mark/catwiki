@@ -19,34 +19,42 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get("/spinning", (req, res, next) => {
+app.get("/spinning", (req, res) => {
   res.json({ message: "😻 Welcome, from Kitty-Wiki 😸" });
-  next();
 });
 
-app.get("/api", async (req, res, next) => {
+app.get("/api", async (req, res) => {
   try {
-    const allData = await res.json(kittyData);
-  
+    const allData = await axios.get(`https://api.thecatapi.com/v1/breeds`);
+    const names = allData.data.map((breed) => breed.name);
+    console.log(names);
+    res.status(200).send(names);
   } catch (err) {
     console.log(err);
   }
-
-  next();
 });
 
-app.get("/api/:name", (req, res, next) => {
-  // getting selected breed name this way as req.params returns "service-worker.js"
-  const url = req.rawHeaders[13];
-  const breed = url
-    .slice(url.lastIndexOf("/") + 1, url.length)
-    .replace(/%20/g, " ");
+app.get("/api/:name", async (req, res) => {
+  try {
+    // getting selected breed name this way as req.params returns "service-worker.js"
+    const url = req.rawHeaders[13];
+    const breed = url
+      .slice(url.lastIndexOf("/") + 1, url.length)
+      .replace(/%20/g, " ");
 
-  console.log(breed);
+    console.log(breed);
 
-  // find the data array for a specific breed
-  res.json(kittyData[kittyData.findIndex((item) => item.name === breed)]);
-  next();
+    const allData = await axios.get(`https://api.thecatapi.com/v1/breeds`);
+
+    const breedData = { allData };
+    const breedArray = breedData.allData.data;
+    const breedSelected =
+      breedArray[breedArray.findIndex((item) => item.name === breed)];
+    console.log(breedSelected);
+    res.status(200).send(breedSelected);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 // using Axios to call the cat API for maximum allowed images of the cat breed.

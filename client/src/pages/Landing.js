@@ -7,24 +7,19 @@ const Landing = () => {
   const [names, setNames] = useState([""]);
 
   useEffect(() => {
-    const getBreeds = async () => {
-      const result = await fetch("/api", {
-        method: "GET",
-      }).then(setTimeout(() => setIsLoading(false), 4000));
-      const json = await result.json();
-      const breeds = json.map((cats) => cats.name);
-
-      console.log(breeds);
-      setNames(breeds);
-    };
-    getBreeds();
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setNames(data))
+      .then(setTimeout(() => setIsLoading(false), 4000));
   }, []);
+
+  console.log(names);
 
   return isLoading ? (
     <LoadingSpinner />
   ) : (
     <>
-      <div className="homepage" style={{backgroundColor:"black"}}>
+      <div className="homepage" style={{ backgroundColor: "black" }}>
         <BreedSearch names={names} />
       </div>
     </>
