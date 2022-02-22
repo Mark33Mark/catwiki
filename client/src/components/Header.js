@@ -9,7 +9,7 @@ import { Link }   from "react-router-dom";
                 <Link to="/api"  style={{cursor:"pointer"}}>
                 <img
                   alt=""
-                  src="../assets/logo128.png"
+                  src="../logo128.png"
                   width="80%"
               />
               </Link>

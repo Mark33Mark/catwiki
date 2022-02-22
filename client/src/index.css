@@ -230,7 +230,7 @@ div.breed-data div.photo-container img {
   height: 100%;
   width: 100%;
   border-radius: 12px;
-  object-fit: cover;
+  object-fit: contain;
   box-shadow: -5px 10px 20px 10px rgba(0, 0, 0, 30%);
 }
 
@@ -274,10 +274,12 @@ div.rating span.stat {
   font-weight: 600;
   font-size: 0.8rem;
   width: 35%;
+  max-width: 5rem;
 }
 
 div.breed-data div.info div.rating-container {
-  width: 45%;
+  width: 65%;
+  max-width: 10rem;
   display: flex;
   justify-content: flex-end;
 }
