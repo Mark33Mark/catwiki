@@ -1,6 +1,6 @@
 ![Mark Watson](./assets/kittyWikiBanner.png)
 
-[![webpage](./assets/myWebpage.png)](https://kitty-wiki.herokuapp.com)  [![github](./assets/myGithub.png)](https://github.com/Mark33Mark/kitty-wiki)  
+[![webpage](./assets/myWebpage.png)](https://kitty-wiki.herokuapp.com)  [![github](./assets/myGithub.png)](https://github.com/Mark33Mark/catwiki)  
 
  
 ## Kitty-Wiki
@@ -54,7 +54,7 @@
 
 ### 4. Installation
 
-You are welcome to download the source code from [my Github repository](https://github.com/Mark33Mark/kitty-wiki)  
+You are welcome to download the source code from [my Github repository](https://github.com/Mark33Mark/catwiki)  
 
 Once downloaded, you will need to install the dependencies with the following command in your terminal:  
 
@@ -71,7 +71,7 @@ Enjoy.
 
 ### 5. Usage  
 
-The code can be downloaded from [my Github repository](https://github.com/Mark33Mark/kitty-wiki) for all assets created for the project.  
+The code can be downloaded from [my Github repository](https://github.com/Mark33Mark/catwiki) for all assets created for the project.  
 
 You are welcome to modify the code as you need as allowed by the [license](#7-license)
 
@@ -95,10 +95,10 @@ You are welcome to modify the code as you need as allowed by the [license](#7-li
 ---
 
 ### 8. Github repo status  
-![GitHub top language](https://img.shields.io/github/languages/top/Mark33Mark/kitty-wiki)
-![GitHub language count](https://img.shields.io/github/languages/count/Mark33Mark/kitty-wiki)
-![GitHub last commit](https://img.shields.io/github/last-commit/Mark33Mark/kitty-wiki)
-![GitHub commits in last month](https://img.shields.io/github/commit-activity/m/Mark33Mark/kitty-wiki)
+![GitHub top language](https://img.shields.io/github/languages/top/Mark33Mark/catwiki)
+![GitHub language count](https://img.shields.io/github/languages/count/Mark33Mark/catwiki)
+![GitHub last commit](https://img.shields.io/github/last-commit/Mark33Mark/catwiki)
+![GitHub commits in last month](https://img.shields.io/github/commit-activity/m/Mark33Mark/catwiki)
 
 ---
 
@@ -133,11 +133,11 @@ You are welcome to modify the code as you need as allowed by the [license](#7-li
 [x]  User interface style is clean and polished.  
 [x]  Application resembles the mock-up functionality provided by Blowfish Studios.  
 [x]  GitHub repository contains application code.
-[x]  Application is deployed to GitHub Pages: [Github location: https://github.com/Mark33Mark/kitty-wiki](https://github.com/Mark33Mark/kitty-wiki)  
+[x]  Application is deployed to GitHub Pages: [Github location: https://github.com/Mark33Mark/catwiki](https://github.com/Mark33Mark/catwiki)  
 [x]  Repository has a unique name.  
 [x]  Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.  
 [x]  Repository contains multiple descriptive commit messages.  
-[x]  Repository contains quality README file with description, screenshot, and link to deployed application: [Github location: https://github.com/Mark33Mark/kitty-wiki](https://github.com/Mark33Mark/kitty-wiki).  
+[x]  Repository contains quality README file with description, screenshot, and link to deployed application: [Github location: https://github.com/Mark33Mark/catwiki](https://github.com/Mark33Mark/catwiki).  
 
 ---
 
