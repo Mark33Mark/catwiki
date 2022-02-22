@@ -19,15 +19,17 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get("/spinning", (req, res) => {
+app.get("/spinning", (req, res, next) => {
   res.json({ message: "😻 Welcome, from Kitty-Wiki 😸" });
+  next();
 });
 
-app.get("/api", (req, res) => {
+app.get("/api", (req, res, next) => {
   const allData = res.json(kittyData);
+  next();
 });
 
-app.get("/api/:name", (req, res) => {
+app.get("/api/:name", (req, res, next) => {
   // getting selected breed name this way as req.params returns "service-worker.js"
   const url = req.rawHeaders[13];
   const breed = url
@@ -38,10 +40,11 @@ app.get("/api/:name", (req, res) => {
 
   // find the data array for a specific breed
   res.json(kittyData[kittyData.findIndex((item) => item.name === breed)]);
+  next();
 });
 
 // using Axios to call the cat API for maximum allowed images of the cat breed.
-app.get("/more-pics/:id", async (req, res) => {
+app.get("/more-pics/:id", async (req, res, next) => {
   console.log(req.params.id);
   try {
     const pics = await axios.get(
@@ -49,6 +52,7 @@ app.get("/more-pics/:id", async (req, res) => {
     );
 
     res.json(pics.data);
+    next();
   } catch (err) {
     console.log(err);
   }
