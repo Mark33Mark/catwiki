@@ -3,6 +3,7 @@ const express = require("express");
 const axios = require("axios");
 require("dotenv").config();
 const enforce = require("express-sslify");
+const cors = require("cors");
 const kittyData = require("./db/kittyDb.json");
 
 const PORT = process.env.PORT || 3001;
@@ -23,7 +24,7 @@ app.get("/spinning", (req, res) => {
   res.json({ message: "😻 Welcome, from Kitty-Wiki 😸" });
 });
 
-app.get("/api",  (req, res) => {
+app.get("/api", cors(), (req, res) => {
   const allData = res.json(kittyData);
 });
 
