@@ -29,7 +29,7 @@ const BreedSearch = (names) => {
             <ul>
               {breeds.map((breed, index) => (
                 <li key={index}>
-                  <Link to={`api/${breed}`}>{breed}</Link>
+                  <Link to={`/${breed}`}>{breed}</Link>
                 </li>
               ))}
             </ul>

@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
+import { useParams } from "react-router-dom";
 import LoadingSpinner from "../components/Loading";
 import BreedData from "../components/BreedData";
 import MorePics from "../components/MorePics";
@@ -25,8 +26,14 @@ const BreedInfo = () => {
   //   getResponse();
   // }, []);
 
+  const { name } = useParams();
+  const breedSelected = { name };
+  console.log("Breed selected = " + breedSelected.name);
+
   useEffect(() => {
-    fetch(`${window.location.pathname}`)
+    fetch(`/${breedSelected.name}`, {
+      headers: { breed: `${breedSelected.name}` },
+    })
       .then((res) => res.json())
       .then((data) => setInfo(data))
       // .then((data) => {

@@ -28,16 +28,18 @@ app.get("/api", cors(), (req, res) => {
   const allData = res.json(kittyData);
 });
 
-app.get("/api/:name", cors(), (req, res) => {
+app.get("/:name", cors(), (req, res) => {
+ console.log("Selected = " +req.headers.breed);
+ const breed = req.headers.breed;
   // getting selected breed name this way as req.params returns "service-worker.js"
-  const url = req.rawHeaders[13];
-  const breed = url
-    .slice(url.lastIndexOf("/") + 1, url.length)
-    .replace(/%20/g, " ");
+  // const url = req.rawHeaders[13];
+  // const breed = url
+  //   .slice(url.lastIndexOf("/") + 1, url.length)
+  //   .replace(/%20/g, " ");
 
   console.log(breed);
 
-  // find the data array for a specific breed
+  // // find the data array for a specific breed
   const breedData = kittyData[kittyData.findIndex((item) => item.name === breed)];
   res.json(breedData);
 });
