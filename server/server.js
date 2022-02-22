@@ -24,8 +24,14 @@ app.get("/spinning", (req, res, next) => {
   next();
 });
 
-app.get("/api", (req, res, next) => {
-  const allData = res.json(kittyData);
+app.get("/api", async (req, res, next) => {
+  try {
+    const allData = await res.json(kittyData);
+  
+  } catch (err) {
+    console.log(err);
+  }
+
   next();
 });
 

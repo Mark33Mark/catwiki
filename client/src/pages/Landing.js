@@ -10,7 +10,7 @@ const Landing = () => {
     const getBreeds = async () => {
       const result = await fetch("/api", {
         method: "GET",
-      }).then(setTimeout(() => setIsLoading(false), 2800));
+      }).then(setTimeout(() => setIsLoading(false), 4000));
       const json = await result.json();
       const breeds = json.map((cats) => cats.name);
 
