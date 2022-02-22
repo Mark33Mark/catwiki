@@ -7,10 +7,17 @@ const Landing = () => {
   const [names, setNames] = useState([""]);
 
   useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setNames(data))
-      .then(setTimeout(() => setIsLoading(false), 4000));
+    const getBreeds = async () => {
+      const result = await fetch("/api", {
+        method: "GET",
+      }).then(setTimeout(() => setIsLoading(false), 2800));
+      const json = await result.json();
+      const breeds = json.map((cats) => cats.name);
+
+      console.log(breeds);
+      setNames(breeds);
+    };
+    getBreeds();
   }, []);
 
   console.log(names);
