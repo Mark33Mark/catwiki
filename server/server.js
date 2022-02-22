@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
+const axios = require("axios");
 require("dotenv").config();
 const enforce = require("express-sslify");
 const kittyData = require("./db/kittyDb.json");
@@ -8,6 +9,16 @@ const kittyData = require("./db/kittyDb.json");
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("x-api-key", process.env.API_KEY);
+  next();
+});
 
 app.get("/spinning", (req, res) => {
   res.json({ message: "😻 Welcome, from Kitty-Wiki 😸" });
@@ -28,6 +39,20 @@ app.get("/api/:name", cors(), (req, res) => {
 
   // find the data array for a specific breed
   res.json(kittyData[kittyData.findIndex((item) => item.name === breed)]);
+});
+
+// using Axios to call the cat API for maximum allowed images of the cat breed.
+app.get("/more-pics/:id", cors(), async (req, res) => {
+  console.log(req.params.id);
+  try {
+    const pics = await axios.get(
+      `https://api.thecatapi.com/v1/images/search?order=ASC&limit=25&breed_id=${req.params.id}`
+    );
+
+    res.json(pics.data);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 // if in production then serve client/build as static assets
