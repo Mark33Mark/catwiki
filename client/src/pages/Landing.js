@@ -27,7 +27,7 @@ const Landing = () => {
         const breeds = data.map((cats)=>cats.name);
         setNames(breeds);
       })
-      .then(setTimeout(() => setIsLoading(false), 7000));
+      .then(setTimeout(() => setIsLoading(false), 2000));
     }, []);
 
   console.log(names);

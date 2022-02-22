@@ -28,7 +28,7 @@ app.get("/api", cors(), (req, res) => {
   const allData = res.json(kittyData);
 });
 
-app.get("/api/:name", (req, res) => {
+app.get("/api/:name", cors(), (req, res) => {
   // getting selected breed name this way as req.params returns "service-worker.js"
   const url = req.rawHeaders[13];
   const breed = url
@@ -38,7 +38,8 @@ app.get("/api/:name", (req, res) => {
   console.log(breed);
 
   // find the data array for a specific breed
-  res.json(kittyData[kittyData.findIndex((item) => item.name === breed)]);
+  const breedData = kittyData[kittyData.findIndex((item) => item.name === breed)];
+  res.json(breedData);
 });
 
 app.get("/more-pics/:id", async (req, res) => {

@@ -9,20 +9,31 @@ const BreedInfo = () => {
   const [loading, setLoading] = useState(true);
   const [info, setInfo] = useState({});
 
+  // useEffect(() => {
+  //   const getResponse = async () => {
+  //     const result = await fetch(`${window.location.pathname}`, {
+  //       method: "GET",
+  //     });
+
+  //     const json = await result.json();
+
+  //     setTimeout(() => {
+  //       setLoading(false);
+  //     }, 1500);
+  //     setInfo(json);
+  //   };
+  //   getResponse();
+  // }, []);
+
   useEffect(() => {
-    const getResponse = async () => {
-      const result = await fetch(`${window.location.pathname}`, {
-        method: "GET",
-      });
-
-      const json = await result.json();
-
-      setTimeout(() => {
-        setLoading(false);
-      }, 1500);
-      setInfo(json);
-    };
-    getResponse();
+    fetch(`${window.location.pathname}`)
+      .then((res) => res.json())
+      .then((data) => setInfo(data))
+      // .then((data) => {
+      //   const selectedBreed = data;
+      //   setInfo(selectedBreed);
+      // })
+      .then(setTimeout(() => setLoading(false), 2000));
   }, []);
 
   console.log(info);
