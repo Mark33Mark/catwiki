@@ -3,15 +3,12 @@ const express = require("express");
 const axios = require("axios");
 require("dotenv").config();
 const enforce = require("express-sslify");
-const favicon = require('express-favicon');
 const cors = require("cors");
 const kittyData = require("./db/kittyDb.json");
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
-
-app.use(favicon(__dirname + '/build/favicon.ico'));
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
