@@ -58,14 +58,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
 
-app.get("/service-worker.js", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "public", "service-worker.js"));
-});
-
-app.get("/manifest.json", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "public", "manifest.json"));
-})
-
 // All other GET requests not handled before will return our React app
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
