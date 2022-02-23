@@ -29,6 +29,8 @@
    
    [Live application:  kitty-wiki.herokuapp.com](https://kitty-wiki.herokuapp.com)  
 
+   ![Mark Watson](./assets/screenshot1.jpg) ![Mark Watson](./assets/screenshot2.jpg) ![Mark Watson](./assets/screenshot3.jpg)
+
 **Why this project?**  
 
 * Blowfish Studios invited me to code this application based on a user story they provided.
