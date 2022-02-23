@@ -48,6 +48,8 @@
               console.log("Service worker registration failed: ", error)
             );
         });
+      } else {
+        console.log('Service Worker files are not supported by browser. This app is not installable.');
       }
     </script>
   </body>
