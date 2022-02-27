@@ -25,7 +25,7 @@ app.get("/spinning", (req, res) => {
 });
 
 app.get("/api", cors(), (req, res) => {
-  const allData = res.json(kittyData);
+  return res.json(kittyData);
 });
 
 app.get("/:name", cors(), (req, res) => {

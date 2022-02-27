@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={Startup} />
-        <Route exact path="/api" component={Landing} />
+        <Route exact path="/api/" component={Landing} />
         <Route path="/:name" component={BreedInfo} />
         <Route component={NoMatch} />
       </Switch>
