@@ -4,22 +4,22 @@
   "short_name": "Kitty-Wiki",
   "icons": [
     {
-      "src": "%PUBLIC_URL%//favicon.ico",
+      "src": "./assets/favicon.ico",
       "sizes": "16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "%PUBLIC_URL%//logo128.png",
+      "src": "./assets/logo128.png",
       "type": "image/png",
       "sizes": "128x128"
     },
     {
-      "src": "%PUBLIC_URL%//logo512.png",
+      "src": "./assets/logo512.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "%PUBLIC_URL%//maskable_icon_x512.png",
+      "src": "./assets/maskable_icon_x512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
