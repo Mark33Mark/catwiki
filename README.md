@@ -1,6 +1,6 @@
 ![Mark Watson](./assets/kittyWikiBanner.png)
 
-[![webpage](./assets/myWebpage.png)](https://kitty-wiki.herokuapp.com)  [![github](./assets/myGithub.png)](https://github.com/Mark33Mark/catwiki)  
+[![webpage](./assets/myWebpage.png)]  [![github](./assets/myGithub.png)](https://github.com/Mark33Mark/catwiki)  
 
  
 ## Kitty-Wiki
@@ -27,7 +27,7 @@
 
 *  Simple application for cat lovers to review the 60+ breeds known in the world.  
    
-   [Live application:  kitty-wiki.herokuapp.com](https://kitty-wiki.herokuapp.com)  
+   [Live application:  kitty-wiki.herokuapp.com]
 
    ![Mark Watson](./assets/screenshot1.jpg) ![Mark Watson](./assets/screenshot2.jpg) ![Mark Watson](./assets/screenshot3.jpg)
 
