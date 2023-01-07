@@ -114,7 +114,7 @@ You are welcome to modify the code as you need as allowed by the [license](#7-li
 
 ### 10. Tests  
 
-* Blowfish Studios provided 1 unit test that I've readapted however I ran out of time to set up any further tests.  
+* Blowfish Studios provided 1 unit test that I've adapted however I ran out of time to set up any further tests.  
 
 ---
 

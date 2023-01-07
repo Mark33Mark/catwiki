@@ -14,10 +14,7 @@ const Startup = () => {
         .then((data) => setData(data.message));
     }, 2000);
 
-    // this is a bit hacky, done to retain Blowfish Studio's provided artwork.
-    // As not much time, I did adopted this method for a quick page change
     setTimeout(() => {
-      // window.location.href = window.location.origin + "/api";
       history.push("/api");
     }, 5000);
   }, [history]);
